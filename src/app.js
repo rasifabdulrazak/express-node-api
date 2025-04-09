@@ -2,7 +2,6 @@ require('dotenv').config({path: `${process.cwd()}/.env`});
 const express = require('express');
 const cors = require('cors');
 const authRouter = require('../src/routes/authRoute');
-const {startCronJobs} = require('../src/core/utils/cronJobs');
 const {notFoundError, internalServerError} = require('../src/middlewares/errorHandler');
 const { successResponse } = require('../src/core/utils/responses');
 

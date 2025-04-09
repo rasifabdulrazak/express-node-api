@@ -40,11 +40,6 @@ const userLogin = async (req,res)=>{
         }
         const token = generateJWTToken(user);
         successResponse(res,message='Login successful',statusCode=200,data={token:token});
-        const send_mail = await sendMail({
-            to: 'rasifrazak123@gmail.com',
-            subject: 'Welcome to Our App!',
-            html: `<h3>Hello ${user.firstName},</h3><p>Welcome to our platform!</p>`,
-          });
     } catch (error) {
         console.error('Login error:', error);
         errorResponse(res,message='Internal server error',statusCode=500);  
